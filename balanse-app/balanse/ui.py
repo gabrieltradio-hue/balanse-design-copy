@@ -47,8 +47,19 @@ CSS = """
 :root { --bg:#F4F6F4; --panel:#FFFFFF; --panel2:#EEF2EF; --line:#DFE5E1; --line2:#C5CEC8; --text:#111A15; --text2:#445049;
         --muted:#68756D; --accent:#4E6283; --stockout:#B5452F; --under:#2A3B57; --optimal:#5B7A86; --over:#62769A; --none:#6B7588;
         --z1:#E0877A; --z2:#5E6F91; --z3:#7DBF9A; --z4:#5F86C9;
-        --mono:'Outfit','DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif; }
+        --mono:'Outfit','DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+        --proxima:'Proxima Nova','ProximaNova','Outfit','DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif; }
 .stApp, .stApp button, .stApp input, .stApp textarea, .stApp select, .stApp h1, [data-testid="stSidebarNav"]::before { font-family:'Outfit','DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif !important; }
+/* Proxima Nova is deliberately limited to the sidebar and Dashboard. The existing Outfit stack remains the app default. */
+[data-testid="stSidebar"], [data-testid="stSidebar"] button, [data-testid="stSidebar"] input, [data-testid="stSidebar"] select,
+[data-testid="stSidebar"] textarea, [data-testid="stSidebar"] [data-testid="stSidebarNav"]::before,
+[data-testid="stAppViewContainer"]:has(h1[id="dashboard"]) [data-testid="stMain"],
+[data-testid="stAppViewContainer"]:has(h1[id="dashboard"]) [data-testid="stMain"] button,
+[data-testid="stAppViewContainer"]:has(h1[id="dashboard"]) [data-testid="stMain"] input,
+[data-testid="stAppViewContainer"]:has(h1[id="dashboard"]) [data-testid="stMain"] select,
+[data-testid="stAppViewContainer"]:has(h1[id="dashboard"]) [data-testid="stMain"] textarea {
+  font-family:var(--proxima) !important;
+}
 .bal-mono, .fig .v, .stat .v, .bal-key .n, .kv span, .ticks, table.bal td.r, table.bal th.r { font-variant-numeric:tabular-nums; }
 .block-container { max-width:1120px; padding-top:1rem; padding-bottom:3rem; }
 header[data-testid="stHeader"] { background:transparent; }
